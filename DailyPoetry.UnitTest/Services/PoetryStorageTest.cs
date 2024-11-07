@@ -1,5 +1,5 @@
-﻿using DailyPoetry.Models;
-using DailyPoetry.Services;
+﻿using DailyPoetry.Library.Models;
+using DailyPoetry.Library.Services;
 using Moq;
 using System.Linq.Expressions;
 

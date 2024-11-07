@@ -1,8 +1,8 @@
-﻿using DailyPoetry.Models;
+﻿using DailyPoetry.Library.Models;
 using SQLite;
 using System.Linq.Expressions;
 
-namespace DailyPoetry.Services;
+namespace DailyPoetry.Library.Services;
 
 public class PoetryStorage : IPoetryStorage
 {
@@ -95,8 +95,13 @@ public class PoetryStorage : IPoetryStorage
 // 存储诗词相关常量类，不能new
 public static class PoetryStorageConstant
 {
+    // 程序正确运行所必须的数据库版本号
     public const int Version = 1;
 
+    // 用偏好存储存app当前的数据库版本
+    //public const string VersionKey = "PoetryStorageConstant.Version";
     public const string VersionKey =
         nameof(PoetryStorageConstant) + "." + nameof(Version);
+
+    // 当版本号不一致，说明需要更新当前软件的数据库版本
 }

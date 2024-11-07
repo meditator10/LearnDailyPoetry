@@ -1,4 +1,4 @@
-﻿namespace DailyPoetry.Services;
+﻿namespace DailyPoetry.Library.Services;
 
 public interface IPreferenceStorage
 {

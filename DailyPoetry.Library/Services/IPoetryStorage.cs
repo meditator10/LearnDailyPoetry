@@ -1,7 +1,7 @@
-﻿using DailyPoetry.Models;
+﻿using DailyPoetry.Library.Models;
 using System.Linq.Expressions;
 
-namespace DailyPoetry.Services;
+namespace DailyPoetry.Library.Services;
 
 public interface IPoetryStorage
 {
