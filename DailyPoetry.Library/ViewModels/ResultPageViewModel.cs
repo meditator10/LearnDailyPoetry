@@ -1,10 +1,11 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using DailyPoetry.Library.Models;
 using DailyPoetry.Library.Services;
 using System.Linq.Expressions;
 using TheSalLab.MauiInfiniteScrolling;
 
-namespace DailyPoetry.ViewModels;
+namespace DailyPoetry.Library.ViewModels;
 
 public class ResultPageViewModel : ObservableObject
 {
@@ -66,4 +67,13 @@ public class ResultPageViewModel : ObservableObject
     public const string Loading = "正在加载";
     public const string NoResult = "没有满足条件的结果";
     public const string NoMoreResult = "没有更多结果";
+
+    private RelayCommand _navigatedToCommand;
+
+    public RelayCommand NavigatedToCommand =>
+        _navigatedToCommand ??= new RelayCommand(async () =>
+            {
+                Poetries.Clear();
+                await Poetries.LoadMoreAsync();
+            });
 }
